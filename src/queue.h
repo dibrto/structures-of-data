@@ -20,13 +20,17 @@ public:
     void print();
 
 private:
-    int size, frontElem, capacity;
+    int size, frontIndex, rearIndex, capacity;
     T* arr;
 };
 
 template <typename T>
 Queue<T>::Queue(int capacity)
-: size(0), frontElem(0), capacity(capacity), arr(new T[capacity]) {}
+: size(0)
+, frontIndex(0)
+, rearIndex(0)
+, capacity(capacity)
+, arr(new T[capacity]) {}
 
 template <typename T>
 Queue<T>::~Queue(){
@@ -38,7 +42,7 @@ Queue<T>::Queue(const Queue<T> &other){
     arr =  new T[other.capacity];
 
     capacity = other.capacity;
-    frontElem = other.frontElem;
+    frontIndex = other.frontIndex;
     size = other.size;
 
     for (size_t i = 0; i < other.size; i++){
@@ -57,7 +61,7 @@ Queue<T> Queue<T>::operator=(const Queue<T> &other)
     delete[] arr;
     capacity = other.capacity;
     size = other.size;
-    frontElem = other.frontElem;
+    frontIndex = other.frontIndex;
 
     arr = new T[capacity];
     for (int i = 0; i < size; ++i)
@@ -83,7 +87,8 @@ void Queue<T>::push(T elem){
         return;
     }
 
-    arr[size] = elem;
+    rearIndex != size ? rearIndex++ : rearIndex = 0;
+    arr[rearIndex] = elem;
     size++;
 }
 
@@ -94,7 +99,7 @@ T Queue<T>::front(){
         return T();
     }
 
-    return arr[frontElem];
+    return arr[frontIndex];
 }
 
 template <typename T>
@@ -105,8 +110,9 @@ T Queue<T>::pop(){
     }
 
     const T front = this->front();
-    frontElem++;
+    
     size--;
+    frontIndex = frontIndex != size ? frontIndex++ : frontIndex = 0;
     return front;
 }
 

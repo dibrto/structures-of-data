@@ -22,6 +22,21 @@ void QueueUsage(){
 
     cout << q3.getSize() << endl;
     q3.print();
+
+    cout << "---- circle queue ----" << endl;
+    Queue<int> q4(3);
+    q4.push(1);
+    q4.push(2);
+    q4.push(3);
+
+    q4.print();
+    q4.pop();
+    q4.push(4);
+    q4.pop();
+    q4.push(5);
+    q4.pop();
+    q4.push(6);
+    q4.print();
 }
 
 void DequeUsage(){
