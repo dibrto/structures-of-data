@@ -4,8 +4,8 @@ template <typename T>
 class Deque {
 public:
     Deque(int capacity = 100);
-    // ~Deque();
-    // Deque(const Deque &other);
+    ~Deque();
+    Deque(const Deque<T> &other);
 
     // void insertFront(T elem);
     // void insertBack(T elem);
@@ -28,3 +28,22 @@ Deque<T>::Deque(int capacity)
 , backElem(0)
 , capacity(capacity)
 , arr(new T[capacity]) {}
+
+template <typename T>
+Deque<T>::~Deque(){
+    delete[] arr;
+}
+
+template <typename T>
+Deque<T>::Deque(const Deque<T> &other){
+    arr = new T[other.capacity];
+
+    capacity = other.capacity;
+    frontElem = other.frontElem;
+    backElem = other.backElem;
+    size = other.size;
+
+    for (size_t i = 0; i < other.size; i++){
+        arr[i] = other.arr[i];
+    }    
+}
