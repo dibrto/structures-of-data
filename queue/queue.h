@@ -46,3 +46,8 @@ int Queue<T>::getSize() const{
     return size;
 }
 
+template <typename T>
+bool Queue<T>::isEmpty() const{
+    return size <= 0;
+}
+
