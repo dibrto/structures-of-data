@@ -1,4 +1,8 @@
 #pragma once
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 template <typename T>
 class Queue{
@@ -57,3 +61,9 @@ void Queue<T>::push(T elem){
     size++;
 }
 
+template <typename T>
+void Queue<T>::print(){
+    for (size_t i = 0; i < size; i++)
+        cout << arr[i] << " ";
+    cout << endl;    
+}
