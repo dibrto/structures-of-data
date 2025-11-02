@@ -6,6 +6,7 @@ public:
     Deque(int capacity = 100);
     ~Deque();
     Deque(const Deque<T> &other);
+    Deque<T> operator=(const Deque<T>& other);
 
     // void insertFront(T elem);
     // void insertBack(T elem);
@@ -46,4 +47,25 @@ Deque<T>::Deque(const Deque<T> &other){
     for (size_t i = 0; i < other.size; i++){
         arr[i] = other.arr[i];
     }    
+}
+
+template <typename T>
+Deque<T> Deque<T>::operator=(const Deque<T> &other)
+{
+    if (this == &other){
+        cout << "Can not assign to same Deque" << endl;
+        return Deque<T>();
+    }
+
+    delete[] arr;
+    capacity = other.capacity;
+    size = other.size;
+    frontElem = other.frontElem;
+    backElem = other.backElem;
+
+    arr = new T[capacity];
+    for (int i = 0; i < size; ++i)
+        arr[i] = other.arr[i];
+
+    return *this;
 }
