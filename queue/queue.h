@@ -41,3 +41,8 @@ Queue<T>::Queue(const Queue &other){
     }    
 }
 
+template <typename T>
+int Queue<T>::getSize() const{
+    return size;
+}
+
