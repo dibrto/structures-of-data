@@ -8,14 +8,14 @@ public:
     Deque(const Deque<T> &other);
     Deque<T> operator=(const Deque<T>& other);
 
+    int getSize();
+    bool empty();
     // void insertFront(T elem);
     // void insertBack(T elem);
     // void eraseFront();
     // void eraseBack();
     // T front();
     // T back();
-    // int getSize();
-    // bool empty();
 
 private:
     int size, frontElem, backElem, capacity;
@@ -68,4 +68,14 @@ Deque<T> Deque<T>::operator=(const Deque<T> &other)
         arr[i] = other.arr[i];
 
     return *this;
+}
+
+template <typename T>
+int Deque<T>::getSize(){
+    return size;
+}
+
+template <typename T>
+bool Deque<T>::empty(){
+    return size <= 0;
 }

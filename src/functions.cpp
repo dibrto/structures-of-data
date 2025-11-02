@@ -26,4 +26,10 @@ void QueueUsage(){
 
 void DequeUsage(){
     Deque<int> d1;
+    Deque<int> d2(d1);
+    Deque<int> d3;
+    d3 = d1;
+
+    cout << "Deque one is: " << d1.empty() << endl;
+    cout << "Deque one size is: " << d1.getSize() << endl;
 }
