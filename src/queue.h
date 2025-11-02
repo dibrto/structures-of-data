@@ -28,7 +28,7 @@ template <typename T>
 Queue<T>::Queue(int capacity)
 : size(0)
 , frontIndex(0)
-, rearIndex(0)
+, rearIndex(-1)
 , capacity(capacity)
 , arr(new T[capacity]) {}
 
