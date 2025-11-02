@@ -9,24 +9,25 @@ public:
     Deque<T> operator=(const Deque<T>& other);
 
     int getSize();
-    bool empty();
+    bool isEmpty();
     // void insertFront(T elem);
-    // void insertBack(T elem);
-    // void eraseFront();
-    // void eraseBack();
-    // T front();
+    void insertBack(T elem);
+    T front();
     // T back();
+    T eraseFront();
+    // T eraseBack();
+    void print();
 
 private:
-    int size, frontElem, backElem, capacity;
+    int size, frontIndex, rearIndex, capacity;
     T* arr;
 };
 
 template <typename T>
 Deque<T>::Deque(int capacity)
 : size(0)
-, frontElem(0)
-, backElem(0)
+, frontIndex(0)
+, rearIndex(-1)
 , capacity(capacity)
 , arr(new T[capacity]) {}
 
@@ -40,8 +41,8 @@ Deque<T>::Deque(const Deque<T> &other){
     arr = new T[other.capacity];
 
     capacity = other.capacity;
-    frontElem = other.frontElem;
-    backElem = other.backElem;
+    frontIndex = other.frontIndex;
+    rearIndex = other.rearIndex;
     size = other.size;
 
     for (size_t i = 0; i < other.size; i++){
@@ -60,8 +61,8 @@ Deque<T> Deque<T>::operator=(const Deque<T> &other)
     delete[] arr;
     capacity = other.capacity;
     size = other.size;
-    frontElem = other.frontElem;
-    backElem = other.backElem;
+    frontIndex = other.frontIndex;
+    rearIndex = other.rearIndex;
 
     arr = new T[capacity];
     for (int i = 0; i < size; ++i)
@@ -76,6 +77,49 @@ int Deque<T>::getSize(){
 }
 
 template <typename T>
-bool Deque<T>::empty(){
+bool Deque<T>::isEmpty(){
     return size <= 0;
+}
+
+template <typename T>
+void Deque<T>::insertBack(T elem){
+    if (size == capacity){
+        cout << "Queue is full" << endl;
+        return;
+    }
+
+    rearIndex != size ? rearIndex++ : rearIndex = 0;
+    arr[rearIndex] = elem;
+    size++;
+}
+
+template <typename T>
+T Deque<T>::front(){
+    if (isEmpty()){
+        cout << "Queue is empty!" << endl;
+        return T();
+    }
+    
+    return arr[frontIndex];
+}
+
+template <typename T>
+T Deque<T>::eraseFront(){
+    if (isEmpty()){
+        cout << "Queue is empty!" << endl;
+        return T();
+    }
+
+    const T front = this->front();
+    frontIndex != size ? frontIndex++ : frontIndex = 0;
+    size--;
+
+    return front;
+}
+
+template <typename T>
+void Deque<T>::print(){
+    for (size_t i = 0; i < size; i++)
+        cout << arr[i] << " ";
+    cout << endl;    
 }

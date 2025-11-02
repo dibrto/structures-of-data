@@ -1,7 +1,7 @@
 #include "functions.h"
 
 int main(int argc, char const *argv[]){
-    QueueUsage();
-    // DequeUsage();
+    // QueueUsage();
+    DequeUsage();
     return 0;
 }

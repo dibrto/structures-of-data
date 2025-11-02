@@ -40,11 +40,21 @@ void QueueUsage(){
 }
 
 void DequeUsage(){
-    Deque<int> d1;
+    Deque<int> d1(3);
     Deque<int> d2(d1);
     Deque<int> d3;
     d3 = d1;
 
-    cout << "Deque one is: " << d1.empty() << endl;
-    cout << "Deque one size is: " << d1.getSize() << endl;
+    cout << "---- circle deque ----" << endl;
+    d1.insertBack(1);
+    d1.insertBack(2);
+    d1.insertBack(3);
+    d1.print();
+    d1.eraseFront();
+    d1.insertBack(4);
+    d1.eraseFront();
+    d1.insertBack(5);
+    d1.eraseFront();
+    d1.insertBack(6);
+    d1.print();
 }
