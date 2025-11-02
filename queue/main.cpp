@@ -2,6 +2,8 @@
 
 int main(int argc, char const *argv[]){
     Queue<int> q1;
+    cout << q1.front() << endl;
+
     q1.push(10);
     q1.push(20);
     q1.push(30);

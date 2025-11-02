@@ -14,8 +14,8 @@ public:
     int getSize() const;
     bool isEmpty() const;
     void push(T elem);
-    int front();
-    int pop();
+    T front();
+    T pop();
     void print();
 
 private:
@@ -59,6 +59,16 @@ template <typename T>
 void Queue<T>::push(T elem){
     arr[size] = elem;
     size++;
+}
+
+template <typename T>
+T Queue<T>::front(){
+    if (isEmpty()){
+        cout << "Queue is empty!" << endl;
+        return T();
+    }
+
+    return arr[frontElem];
 }
 
 template <typename T>
