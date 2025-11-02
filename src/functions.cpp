@@ -23,3 +23,7 @@ void QueueUsage(){
     cout << q3.getSize() << endl;
     q3.print();
 }
+
+void DequeUsage(){
+    Deque<int> d1;
+}

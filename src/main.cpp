@@ -2,5 +2,6 @@
 
 int main(int argc, char const *argv[]){
     // QueueUsage();
+    DequeUsage();
     return 0;
 }
