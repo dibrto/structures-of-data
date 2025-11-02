@@ -4,8 +4,15 @@ template <typename T>
 class Queue{
 public:
     Queue(int capacity = 100);
-    // ~Queue();
-    // Queue(const Queue& other);
+    ~Queue();
+    Queue(const Queue& other);
+
+    int getSize() const;
+    bool isEmpty() const;
+    void push(T elem);
+    int front();
+    int pop();
+    void print();
 
 private:
     int size, frontElem, capacity;
