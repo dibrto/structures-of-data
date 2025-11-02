@@ -1,7 +1,7 @@
 #include "queue.h"
 
 int main(int argc, char const *argv[]){
-    Queue<int> q1;
+    Queue<int> q1(100);
     cout << q1.front() << endl;
 
     q1.push(10);

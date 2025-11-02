@@ -57,6 +57,11 @@ bool Queue<T>::isEmpty() const{
 
 template <typename T>
 void Queue<T>::push(T elem){
+    if (size == capacity){
+        cout << "Queue is full" << endl;
+        return;
+    }
+
     arr[size] = elem;
     size++;
 }
