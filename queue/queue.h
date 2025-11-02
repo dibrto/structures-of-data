@@ -51,3 +51,9 @@ bool Queue<T>::isEmpty() const{
     return size <= 0;
 }
 
+template <typename T>
+void Queue<T>::push(T elem){
+    arr[size] = elem;
+    size++;
+}
+
