@@ -27,7 +27,7 @@ template <typename T>
 Deque<T>::Deque(int capacity)
 : size(0)
 , frontIndex(0)
-, rearIndex(-1)
+, rearIndex(capacity - 1)
 , capacity(capacity)
 , arr(new T[capacity]) {}
 
@@ -96,11 +96,11 @@ void Deque<T>::insertFront(T elem){
 template <typename T>
 void Deque<T>::insertBack(T elem){
     if (size == capacity){
-        cout << "Queue is full" << endl;
+        cout << "Deque is full" << endl;
         return;
     }
 
-    rearIndex != size ? rearIndex++ : rearIndex = 0;
+    rearIndex != capacity - 1 ? rearIndex++ : rearIndex = 0;
     arr[rearIndex] = elem;
     size++;
 }
