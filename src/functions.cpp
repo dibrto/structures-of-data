@@ -57,4 +57,11 @@ void DequeUsage(){
     d1.eraseFront();
     d1.insertBack(6);
     d1.print();
+
+    cout << "---- other ----" << endl;
+    d2.insertBack(20);
+    d2.insertBack(30);
+    d2.insertBack(10);
+    cout << d2.front() << endl;
+    cout << d2.back() << endl;
 }

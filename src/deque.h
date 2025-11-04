@@ -13,7 +13,7 @@ public:
     // void insertFront(T elem);
     void insertBack(T elem);
     T front();
-    // T back();
+    T back();
     T eraseFront();
     // T eraseBack();
     void print();
@@ -104,13 +104,23 @@ T Deque<T>::front(){
 }
 
 template <typename T>
+T Deque<T>::back(){
+    if (isEmpty()){
+        cout << "Queue is empty!" << endl;
+        return T();
+    }
+
+    return arr[rearIndex];
+}
+
+template <typename T>
 T Deque<T>::eraseFront(){
     if (isEmpty()){
         cout << "Queue is empty!" << endl;
         return T();
     }
 
-    const T front = this->front();
+    const T front = arr[frontIndex];
     frontIndex != size ? frontIndex++ : frontIndex = 0;
     size--;
 
