@@ -43,7 +43,6 @@ void DequeUsage(){
     Deque<int> d1(3);
     Deque<int> d2(d1);
     Deque<int> d3;
-    d3 = d1;
 
     cout << "---- circle deque ----" << endl;
     d1.insertBack(1);
@@ -58,10 +57,30 @@ void DequeUsage(){
     d1.insertBack(6);
     d1.print();
 
-    cout << "---- other ----" << endl;
-    d2.insertBack(20);
+    cout << "---- tests ----" << endl;
+    d2.insertFront(30);
+    d2.insertFront(20);
+    d2.insertFront(10);
+    d2.print(); // 10 20 30
+
+    d2.eraseBack();
+    d2.insertFront(0);
+    d2.print(); // 0 10 20
+
+    d2.eraseFront();
+    d2.insertBack(25);
+    d2.print(); // 10 20 25
+
+    d2.insertBack(35); // should print "Deque is full"
+
+    d2.eraseFront();
     d2.insertBack(30);
-    d2.insertBack(10);
-    cout << d2.front() << endl;
-    cout << d2.back() << endl;
+    d2.print(); // 20 25 30
+
+    d3 = d2;
+    d3.print(); // 20 25 30
+    d3.eraseFront();
+    d3.print(); // 25 30
+    d2.print(); // 20 25 30
+
 }
