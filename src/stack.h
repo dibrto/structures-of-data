@@ -9,7 +9,7 @@ public:
     Stack<T> operator=(const Stack<T>& other);
 
     int getSize() const;
-    // bool isEmpty() const;
+    bool isEmpty() const;
     // void push(T elem);
     // T top();
     // T pop();
@@ -67,4 +67,9 @@ Stack<T> Stack<T>::operator=(const Stack<T> &other){
 template <typename T>
 int Stack<T>::getSize() const{
     return size;
+}
+
+template <typename T>
+bool Stack<T>::isEmpty() const{
+    return size <= 0;
 }

@@ -87,5 +87,6 @@ void DequeUsage(){
 
 void StackUsage(){
     Stack<int> s1(3);
-    cout << s1.getSize();
+    cout << s1.getSize() << endl;
+    cout << s1.isEmpty() << endl;
 }
