@@ -10,9 +10,10 @@ public:
 
     int getSize() const;
     bool isEmpty() const;
-    // void push(T elem);
+    void push(T elem);
     // T top();
     // T pop();
+    // void print();
     
 
 private:
@@ -72,4 +73,16 @@ int Stack<T>::getSize() const{
 template <typename T>
 bool Stack<T>::isEmpty() const{
     return size <= 0;
+}
+
+template <typename T>
+void Stack<T>::push(T elem){
+    if (size == capacity){
+        cout << "Stack is full" << endl;
+        return;
+    }
+
+    frontIndex++;
+    arr[frontIndex] = elem;
+    size++;
 }
