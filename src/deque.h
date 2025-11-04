@@ -10,7 +10,7 @@ public:
 
     int getSize();
     bool isEmpty();
-    // void insertFront(T elem);
+    void insertFront(T elem);
     void insertBack(T elem);
     T front();
     T back();
@@ -141,7 +141,14 @@ T Deque<T>::eraseFront(){
 
 template <typename T>
 void Deque<T>::print(){
-    for (size_t i = 0; i < size; i++)
-        cout << arr[i] << " ";
+    if (isEmpty()){
+        cout << "Deque is empty!" << endl;
+        return;
+    }
+
+    for (int i = 0; i < size; i++){
+        cout << arr[(frontIndex + i) % capacity] << " ";
+    }
+
     cout << endl;    
 }
