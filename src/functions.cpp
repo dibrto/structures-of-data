@@ -86,5 +86,5 @@ void DequeUsage(){
 }
 
 void StackUsage(){
-    Stack<int>;
+    Stack<int>(3);
 }
