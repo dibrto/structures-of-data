@@ -12,7 +12,7 @@ public:
     bool isEmpty() const;
     void push(T elem);
     T top();
-    // T pop();
+    T pop();
     void print();
     
 
@@ -95,6 +95,20 @@ T Stack<T>::top(){
     }
 
     return arr[frontIndex];
+}
+
+template <typename T>
+T Stack<T>::pop(){
+    if (isEmpty()){
+        cout << "Stack is empty" << endl;
+        return T();
+    }
+
+    const T top = arr[frontIndex];
+    frontIndex--;
+    size--;
+    
+    return top;
 }
 
 template <typename T>

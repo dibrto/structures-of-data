@@ -90,6 +90,13 @@ void StackUsage(){
     s1.push(30);
     s1.push(20);
     s1.push(10);
-    cout << s1.top() << endl;
-    s1.print();
+
+    cout << s1.top() << endl; // 10
+    s1.print(); // 30 20 10
+
+    s1.pop();
+    s1.push(5);
+    s1.print(); // 30 20 5
+
+    s1.push(0); // stack is full
 }
