@@ -8,7 +8,7 @@ public:
     Stack(const Stack<T> &other);
     Stack<T> operator=(const Stack<T>& other);
 
-    // int getSize() const;
+    int getSize() const;
     // bool isEmpty() const;
     // void push(T elem);
     // T top();
@@ -62,4 +62,9 @@ Stack<T> Stack<T>::operator=(const Stack<T> &other){
         arr[i] = other.arr[i];
 
     return *this;
+}
+
+template <typename T>
+int Stack<T>::getSize() const{
+    return size;
 }

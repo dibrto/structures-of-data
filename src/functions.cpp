@@ -86,5 +86,6 @@ void DequeUsage(){
 }
 
 void StackUsage(){
-    Stack<int>(3);
+    Stack<int> s1(3);
+    cout << s1.getSize();
 }
