@@ -15,7 +15,7 @@ public:
     T front();
     T back();
     T eraseFront();
-    // T eraseBack();
+    T eraseBack();
     void print();
 
 private:
@@ -133,10 +133,24 @@ T Deque<T>::eraseFront(){
     }
 
     const T front = arr[frontIndex];
-    frontIndex != size ? frontIndex++ : frontIndex = 0;
+    frontIndex != capacity - 1 ? frontIndex++ : frontIndex = 0;
     size--;
 
     return front;
+}
+
+template <typename T>
+T Deque<T>::eraseBack(){
+    if (isEmpty()){
+        cout << "Queue is empty!" << endl;
+        return T();
+    }
+
+    const T back = arr[rearIndex];
+    rearIndex != 0 ? rearIndex-- : rearIndex = capacity - 1;
+    size--;
+
+    return back;
 }
 
 template <typename T>
