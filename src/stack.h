@@ -13,7 +13,7 @@ public:
     void push(T elem);
     // T top();
     // T pop();
-    // void print();
+    void print();
     
 
 private:
@@ -85,4 +85,17 @@ void Stack<T>::push(T elem){
     frontIndex++;
     arr[frontIndex] = elem;
     size++;
+}
+
+template <typename T>
+void Stack<T>::print(){
+    if (isEmpty()){
+        cout << "Stack is empty" << endl;
+        return;
+    }
+
+    for (size_t i = 0; i < size; i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;    
 }
