@@ -2,6 +2,7 @@
 
 int main(int argc, char const *argv[]){
     // QueueUsage();
-    DequeUsage();
+    // DequeUsage();
+    StackUsage();
     return 0;
 }

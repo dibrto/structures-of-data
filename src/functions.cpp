@@ -84,3 +84,7 @@ void DequeUsage(){
     d2.print(); // 20 25 30
 
 }
+
+void StackUsage(){
+    Stack<int>;
+}
