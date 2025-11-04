@@ -82,6 +82,18 @@ bool Deque<T>::isEmpty(){
 }
 
 template <typename T>
+void Deque<T>::insertFront(T elem){
+    if (size == capacity){
+        cout << "Deque is full" << endl;
+        return;
+    }
+
+    frontIndex != 0 ? frontIndex-- : frontIndex = capacity - 1;
+    arr[frontIndex] = elem;
+    size++;
+}
+
+template <typename T>
 void Deque<T>::insertBack(T elem){
     if (size == capacity){
         cout << "Queue is full" << endl;
