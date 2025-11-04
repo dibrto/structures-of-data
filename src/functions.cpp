@@ -90,5 +90,6 @@ void StackUsage(){
     s1.push(30);
     s1.push(20);
     s1.push(10);
+    cout << s1.top() << endl;
     s1.print();
 }

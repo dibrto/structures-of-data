@@ -11,7 +11,7 @@ public:
     int getSize() const;
     bool isEmpty() const;
     void push(T elem);
-    // T top();
+    T top();
     // T pop();
     void print();
     
@@ -85,6 +85,16 @@ void Stack<T>::push(T elem){
     frontIndex++;
     arr[frontIndex] = elem;
     size++;
+}
+
+template <typename T>
+T Stack<T>::top(){
+    if (isEmpty()){
+        cout << "Stack is empty" << endl;
+        return T();
+    }
+
+    return arr[frontIndex];
 }
 
 template <typename T>
