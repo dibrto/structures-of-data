@@ -5,6 +5,7 @@ int main(int argc, char const *argv[]){
     // DequeUsage();
     // StackUsage();
     // ListUsage();
-    PrioriyQueueUsage();
+    // PrioriyQueueUsage();
+    BinaryTreeUsage();
     return 0;
 }

@@ -118,3 +118,10 @@ void PrioriyQueueUsage(){
     
     pQ.print();
 }
+
+void BinaryTreeUsage(){
+    BinaryTree<int> tree;
+    tree.addRoot();
+
+    cout << tree.empty();
+}

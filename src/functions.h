@@ -5,9 +5,11 @@
 #include "stack.h"
 #include "list.h"
 #include "priorityQueue.h"
+#include "BinaryTree.h"
 
 void QueueUsage();
 void DequeUsage();
 void StackUsage();
 void ListUsage();
 void PrioriyQueueUsage();
+void BinaryTreeUsage();
