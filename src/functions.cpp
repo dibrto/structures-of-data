@@ -100,3 +100,11 @@ void StackUsage(){
 
     s1.push(0); // stack is full
 }
+
+void ListUsage(){
+    NodeList<int> list;
+    list.insertFront(5);
+    list.insertFront(10);
+
+    cout << list.size();
+}
