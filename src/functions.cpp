@@ -108,3 +108,13 @@ void ListUsage(){
 
     cout << list.size();
 }
+
+void PrioriyQueueUsage(){    
+    PriorityQueue<int , LexCompare> pQ;
+    pQ.insert(2);  
+    pQ.insert(10);  
+    pQ.insert(11);  
+    pQ.insert(3);
+    
+    pQ.print();
+}
