@@ -6,6 +6,6 @@ int main(int argc, char const *argv[]){
     // StackUsage();
     // ListUsage();
     // PrioriyQueueUsage();
-    BinaryTreeUsage();
+    // BinaryTreeUsage();
     return 0;
 }
